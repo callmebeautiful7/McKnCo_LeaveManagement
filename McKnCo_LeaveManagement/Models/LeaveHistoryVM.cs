@@ -24,7 +24,7 @@ namespace McKnCo_LeaveManagement.Models
 
         public DateTime EndDate { get; set; }      
 
-        public DetailsLeaveTypeVM LeaveType { get; set; }
+        public LeaveTypeVM LeaveType { get; set; }
 
         public int LeaveTypeId { get; set; }
 
