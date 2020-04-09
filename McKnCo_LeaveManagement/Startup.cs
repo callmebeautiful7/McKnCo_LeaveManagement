@@ -43,7 +43,7 @@ namespace McKnCo_LeaveManagement
             // AutoMapper references added
             services.AddAutoMapper(typeof(Maps));
 
-            services.AddDefaultIdentity<IdentityUser>() // removed options for email confirmation
+            services.AddDefaultIdentity<Employee>() // removed options for email confirmation
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
@@ -54,7 +54,7 @@ namespace McKnCo_LeaveManagement
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, 
             IWebHostEnvironment env,
-            UserManager<IdentityUser> userManager,
+            UserManager<Employee> userManager,
             RoleManager<IdentityRole> roleManager
         )
         {
