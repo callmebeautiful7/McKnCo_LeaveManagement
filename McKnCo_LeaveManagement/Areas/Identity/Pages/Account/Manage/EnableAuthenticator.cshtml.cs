@@ -148,7 +148,7 @@ namespace McKnCo_LeaveManagement.Areas.Identity.Pages.Account.Manage
         {
             return string.Format(
                 AuthenticatorUriFormat,
-                _urlEncoder.Encode("McKnCo_LeaveManagement"),
+                _urlEncoder.Encode("McKnCo Management"), // changed
                 _urlEncoder.Encode(email),
                 unformattedKey);
         }
