@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace McKnCo_LeaveManagement.Data
 {
-    public class LeaveHistory
+    public class LeaveRequest
     {
         [Key]
 
