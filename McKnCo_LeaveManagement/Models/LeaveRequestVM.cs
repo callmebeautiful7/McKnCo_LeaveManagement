@@ -42,7 +42,7 @@ namespace McKnCo_LeaveManagement.Models
 
     public class AdminLeaveRequestViewVM
     {
-        [Display(Name = "Total Number Of Requests")]
+        [Display(Name = "Total Requests")]
         public int TotalRequests { get; set; }
         [Display(Name = "Approved Requests")]
         public int ApprovedRequests { get; set; }

@@ -31,30 +31,30 @@ namespace McKnCo_LeaveManagement.Repository
 
         public ICollection<LeaveRequest> FindAll()
         {
-            var LeaveRequests = _db.LeaveRequests
+            var leaveRequests = _db.LeaveRequests
                 .Include(q => q.RequestingEmployee)
                 .Include(q => q.ApprovedBy)
                 .Include(q => q.LeaveType)
                 .ToList();
-            return LeaveRequests;
+            return leaveRequests;
         }
 
         public LeaveRequest FindById(int id)
         {
-            var LeaveRequests = _db.LeaveRequests
+            var leaveRequests = _db.LeaveRequests
                 .Include(q => q.RequestingEmployee)
                 .Include(q => q.ApprovedBy)
                 .Include(q => q.LeaveType)
                 .FirstOrDefault(q => q.Id == id);
-            return LeaveRequests;
+            return leaveRequests;
         }
 
         public ICollection<LeaveRequest> GetLeaveRequestsByEmployee(string employeeid)
         {
-            var LeaveRequests = FindAll()                
+            var leaveRequests = FindAll()                
                 .Where(q => q.RequestingEmployeeId == employeeid)
                 .ToList();
-            return LeaveRequests;
+            return leaveRequests;
         }
 
         public bool isExists(int id)
