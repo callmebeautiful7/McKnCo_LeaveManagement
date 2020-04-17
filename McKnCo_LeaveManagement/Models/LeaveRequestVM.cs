@@ -10,6 +10,7 @@ namespace McKnCo_LeaveManagement.Models
     public class LeaveRequestVM
     {
         public int Id { get; set; }
+        [Display(Name = "Requesting Employee")]
         public EmployeeVM RequestingEmployee { get; set; }
         [Display(Name = "Employee Name")]
         public string RequestingEmployeeId { get; set; }
@@ -33,6 +34,10 @@ namespace McKnCo_LeaveManagement.Models
         public EmployeeVM ApprovedBy { get; set; }
         [Display(Name = "Approver Name")]
         public string ApprovedById { get; set; }
+        public bool Cancelled { get; set; }
+        [Display(Name = "Employee Comments")]
+        [MaxLength(300)]
+        public string RequestComments { get; set; }
     }
 
     public class AdminLeaveRequestViewVM
@@ -60,6 +65,14 @@ namespace McKnCo_LeaveManagement.Models
         public IEnumerable<SelectListItem> LeaveTypes { get; set; }
         [Display(Name = "Leave Type")]
         public int LeaveTypeId { get; set; }
+        [Display(Name = "Comments")]
+        [MaxLength(300)]
+        public string RequestComments { get; set; }
+    }
 
+    public class EmployeeLeaveRequestViewVM
+    {
+        public List<LeaveAllocationVM> LeaveAllocations { get; set; }
+        public List<LeaveRequestVM> LeaveRequests { get; set; }
     }
 }

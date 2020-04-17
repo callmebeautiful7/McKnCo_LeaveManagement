@@ -49,6 +49,14 @@ namespace McKnCo_LeaveManagement.Repository
             return LeaveRequests;
         }
 
+        public ICollection<LeaveRequest> GetLeaveRequestsByEmployee(string employeeid)
+        {
+            var LeaveRequests = FindAll()                
+                .Where(q => q.RequestingEmployeeId == employeeid)
+                .ToList();
+            return LeaveRequests;
+        }
+
         public bool isExists(int id)
         {
             var exists = _db.LeaveRequests.Any(q => q.Id == id);
